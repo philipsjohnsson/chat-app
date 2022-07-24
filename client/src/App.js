@@ -10,8 +10,9 @@ function App() {
     console.log('TESTTEST')
     console.log(nickname)
     console.log(room)
-    if(nickname !== '' || room !== '') {
-      console.log('STRING ÄR inte EMPTY')
+    if (room === '' || nickname === '') {
+      console.log('HELLO THIS WORKS')
+    } else {
       setShow(true)
     }
   }

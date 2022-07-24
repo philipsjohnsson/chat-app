@@ -16,3 +16,9 @@
     justify-content: center;
     align-content: center;
 }
+
+.message {
+    background-color: azure;
+    margin: 5px;
+    height: 70px;
+}
