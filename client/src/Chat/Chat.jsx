@@ -1,5 +1,9 @@
 import React, { useRef, useState } from 'react'
+import { useEffect } from 'react'
 import './Chat.css'
+import { io } from 'socket.io-client'
+
+
 // import ChatMessage from '../ChatMessage/ChatMessage'
 
 const Chat = () => {
@@ -7,6 +11,15 @@ const Chat = () => {
   const textareaMessage = useRef(null)
   const messageWrapper = useRef(null)
   const [message, setMessage] = useState([])
+
+  useEffect(() => {
+    console.log('test use effect')
+    const socket = io('ws://localhost:4000')
+    console.log(socket)
+    socket.on('heartbeat', (message) => {
+      console.log(message)
+    })
+  })
 
   const submitMessage = event => {
 
